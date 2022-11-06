@@ -14,8 +14,8 @@
     <input type="text" id="key">
     <textarea id="memo"></textarea>
     <div class="emotion"><h2>今の気もちは？</h2></div>
+    <!-- 下記に今の気もちを入力↓ -->
     <textarea id="your_emotion"></textarea>
-
     <button class="button">つぶやく</button>
 
     <ul>
@@ -55,7 +55,7 @@ for(let i=0; i<localStorage.length; i++){
 //4.検索イベント
 
 $("#button").on("click",function() {
-  // 文字列を比較する
+  //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
   if("#memo".indexOf("#your_emotion") > -1){
     // 文字列が有ったら
     alert('含まれているよ');
