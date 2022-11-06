@@ -16,7 +16,7 @@
     <div class="emotion"><h2>今の気もちは？</h2></div>
     <!-- 下記に今の気もちを入力↓ -->
     <textarea id="your_emotion"></textarea>
-    <button class="button">つぶやく</button>
+    <button id="button">つぶやく</button>
 
     <ul>
       
@@ -55,13 +55,20 @@ for(let i=0; i<localStorage.length; i++){
 //4.検索イベント
 
 $("#button").on("click",function() {
-  //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-  if("#memo".indexOf("#your_emotion") > -1){
-    // 文字列が有ったら
+    alert("ok");
+    console.log("OK")
+    // localStorage.getItem('Key')でvalueを取得することができる↓
+    let data = localStorage.getItem('key');
+  
+//   var text1 = $("#memo").val();
+  var text = $("#your_emotion").val();
+   //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+  if(data.indexOf(text) !==-1){
+//     // 文字列が有ったら
     alert('含まれているよ');
     console.log("文字列が有る");
 	}else{
-    // 文字列が無かったら
+//     // 文字列が無かったら
     console.log("文字列が無い");
   }
 });
