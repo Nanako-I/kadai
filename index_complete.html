@@ -54,24 +54,22 @@ for(let i=0; i<localStorage.length; i++){
 
 //4.検索イベント
 
-$("#button").on("click",function() {
-    alert("ok");
-    console.log("OK")
-    // localStorage.getItem('Key')でvalueを取得することができる↓
-    let data = localStorage.getItem('key');
-  
-//   var text1 = $("#memo").val();
-  var text = $("#your_emotion").val();
-   //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-  if(data.indexOf(text) !==-1){
-//     // 文字列が有ったら
-    alert('含まれているよ');
-    console.log("文字列が有る");
-	}else{
-//     // 文字列が無かったら
-    console.log("文字列が無い");
-  }
-});
+    $("#button").on("click", function () {
+        alert("ok");
+        console.log("OK")
+        // localStorage.getItem('Key')でvalueを取得することができる↓
+        let data = localStorage.getItem('key');
+        var text = $("#your_emotion").val();
+        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+        if (data.indexOf(text) !== -1) {
+            //     // 文字列が有ったら
+            alert('含まれているよ');
+            console.log("文字列が有る");
+        } else {
+            //     // 文字列が無かったら
+            console.log("文字列が無い");
+        }
+    });
 
 
 </script>
