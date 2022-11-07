@@ -11,12 +11,28 @@
 <h1>MemoPad</h1>
 </header>
 <main>
+
+      <!-- 下記に今の気もちを入力↓ -->
+      <div class="emotion"><h2>今の気もちを入力してみよう</h2></div>
+      <img src="img/happy.jpg" width="350" height=auto>
+      <textarea id="happy_desc"></textarea>
+      <button id="button_happy">つぶやく</button>
+
+      <img src="img/angry.png" width="250" height=auto>
+      <textarea id="angry_desc"></textarea>
+      <button id="button_angry">つぶやく</button>
+
+      <img src="img/sad.png" width="250" height=auto>
+      <textarea id="sad_desc"></textarea>
+      <button id="button_sad">つぶやく</button>
+
+      
+      <img src="img/enjoy.png"width="250" height=auto>
+      <textarea id="enjoy_desc"></textarea>
+      <button id="button_enjoy">つぶやく</button>
+
     <input type="text" id="key">
     <textarea id="memo"></textarea>
-    <div class="emotion"><h2>今の気もちは？</h2></div>
-    <!-- 下記に今の気もちを入力↓ -->
-    <textarea id="your_emotion"></textarea>
-    <button id="button">つぶやく</button>
 
     <ul>
       
@@ -54,16 +70,17 @@ for(let i=0; i<localStorage.length; i++){
 
 //4.検索イベント
 
-    $("#button").on("click", function () {
+    $("#button_happy").on("click", function () {
         alert("ok");
         console.log("OK");
         // localStorage.getItem('Key')でvalueを取得することができる↓
-        let data = localStorage.getItem('key');
-        var text = $("#your_emotion").val();
+        let data = localStorage.getItem("喜");
+        var text = $("#happy_desc").val();
         //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-        if ("#memo".indexOf(text) !== -1) {
+        if (data.indexOf(text) !== -1) {
             //     // 文字列が有ったら
-            alert('含まれているよ');
+            // alert("含まれているよ");
+            location.replace('index.html');
             console.log("文字列が有る");
         } else {
             //     // 文字列が無かったら
@@ -71,6 +88,60 @@ for(let i=0; i<localStorage.length; i++){
         }
     });
 
+    $("#button_angry").on("click", function () {
+        alert("ok");
+        console.log("OK");
+        // localStorage.getItem('Key')でvalueを取得することができる↓
+        let data = localStorage.getItem("怒");
+        var text = $("#angry_desc").val();
+        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+        if (data.indexOf(text) !== -1) {
+            //     // 文字列が有ったら
+            alert("含まれているよ");
+            location.replace('index.html');
+            console.log("文字列が有る");
+        } else {
+            //     // 文字列が無かったら
+            console.log("文字列が無い");
+        }
+    });
+
+    $("#button_sad").on("click", function () {
+        alert("ok");
+        console.log("OK");
+        // localStorage.getItem('Key')でvalueを取得することができる↓
+        let data = localStorage.getItem("哀");
+        var text = $("#sad_desc").val();
+        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+        if (data.indexOf(text) !== -1) {
+            //     // 文字列が有ったら
+            alert("含まれているよ");
+            location.replace('index.html');
+            console.log("文字列が有る");
+        } else {
+            //     // 文字列が無かったら
+            console.log("文字列が無い");
+        }
+    });
+
+    
+    $("#button_enjoy").on("click", function () {
+        alert("ok");
+        console.log("OK");
+        // localStorage.getItem('Key')でvalueを取得することができる↓
+        let data = localStorage.getItem("楽");
+        var text = $("#enjoy_desc").val();
+        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+        if (data.indexOf(text) !== -1) {
+            //     // 文字列が有ったら
+            alert("含まれているよ");
+            location.replace('index.html');
+            console.log("文字列が有る");
+        } else {
+            //     // 文字列が無かったら
+            console.log("文字列が無い");
+        }
+    });
 
 </script>
 <footer><small>G's</small></footer>
