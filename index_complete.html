@@ -13,24 +13,35 @@
 <main>
 
       <!-- 下記に今の気もちを入力↓ -->
-      <div class="emotion"><h2>今の気もちを入力してみよう</h2></div>
-      <img src="img/happy.jpg" width="350" height=auto>
+      <div class="emotion"><h2>今の気もちを入力してみよう</h2></div></div>
+      <div class="emotion_type">
+      <img src="img/happy.jpg" width="250" height=auto>
       <textarea id="happy_desc"></textarea>
-      <button id="button_happy">つぶやく</button>
+     
+    </div>
+    <button id="button_happy">つぶやく</button>
 
+    <div class="emotion_type">
       <img src="img/angry.png" width="250" height=auto>
       <textarea id="angry_desc"></textarea>
-      <button id="button_angry">つぶやく</button>
+     
+    </div>
+    <button id="button_angry">つぶやく</button>
 
+    <div class="emotion_type">
       <img src="img/sad.png" width="250" height=auto>
       <textarea id="sad_desc"></textarea>
-      <button id="button_sad">つぶやく</button>
-
+    
+    </div>
+    <button id="button_sad">つぶやく</button>
       
+    <div class="emotion_type">
       <img src="img/enjoy.png"width="250" height=auto>
       <textarea id="enjoy_desc"></textarea>
-      <button id="button_enjoy">つぶやく</button>
-
+     
+    </div>
+    <button id="button_enjoy">つぶやく</button>
+      
     <input type="text" id="key">
     <textarea id="memo"></textarea>
 
@@ -49,9 +60,37 @@
 $("#save").on("click",function(){
     const key = $("#key").val();
     const value = $("#memo").val();
-    localStorage.setItem(key,value);
+    // localStorage.setItem(key,value);
+
+    // setjsonという変数を作る↓
+    // JSON.stringify() メソッドは、ある JavaScript のオブジェクトや値を JSON 文字列に変換↓
+    var setjson = JSON.stringify(value);
+    localStorage.setItem(key,setjson);
+    // localStorage.setItem(key,JSON.stringify(val));
+
+// 配列にする↓
+// var array = [];
+// var obj = {
+//   key: value,
+// //   'キー2': '値2'
+// };
+// array.push(obj);
+
+// const o1={
+//     key:value
+// };
+// // 波カッコの文字のまま入る↓
+// var setjson = JSON.stringify(o1);
+// localStorage.setItem(key, setjson);
+
+
+
     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
     $("#list").append(html);
+
+    
+    
+
 });
 
 //2.clear クリックイベント
@@ -64,9 +103,15 @@ $("#clear").on("click",function(){
 for(let i=0; i<localStorage.length; i++){
     const key   = localStorage.key(i);
     const value = localStorage.getItem(key);
+    var getjson = localStorage.getItem(key);
+var obj = JSON.parse(getjson);
+console.log(obj);
+
     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
     $("#list").append(html);
 }
+
+
 
 //4.検索イベント
 
