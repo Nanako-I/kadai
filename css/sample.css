@@ -33,13 +33,17 @@ p{
 
 .emotion_type{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* display: block; */
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
 }
 
 textarea{
     margin: 10px 3%;
-    width: 25%;
+    width: auto;
     height: 100px;
     text-align: center;
     /* display: table-cell; */
@@ -62,7 +66,122 @@ textarea{
   border-bottom: 15px solid transparent; */
 }
 
+/* -----------------------------
+　　　　　ハート部分
+----------------------------- */ 
+.happy_heart{
+    margin: 0 35% 0 65%;
+    font-size: 80px;
+    color:#e4e4e4;
+    /* テキストがクリックされないようにする↓ */
+    user-select: none;
+}
+
+.checkbox{
+    margin: 0 35% 0 65%;
+}
+
+/* チェックボックスが☑されたとき↓ */
+.like [type="checkbox"]:checked ~ .happy_heart{
+    animation-name: happy_heart;
+    /* 0.6秒に設定↓ */
+    animation-duration: .6s;
+/* ☑してもハートが赤いままにする↓ */
+    animation-fill-mode: forwards;
+}
+
+@keyframes happy_heart{
+    /* 何もないところからハートを出す↓ */
+    0%{
+        transform: scale(0);
+    }
+    /* 少し大きくなる↓ */
+    50%{
+        transform: scale(1.1);
+    }
+    /* 100%で元のサイズ（1）に戻る↓ */
+    100%{
+        transform: scale(1);
+        color: red;
+    }
+}
+
+.angry_heart{
+    font-size: 80px;
+    color:#e4e4e4;
+    user-select: none;
+}
+.like [type="checkbox"]:checked ~ .angry_heart{
+    animation-name: happy_heart;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes angry_heart{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        color: red;
+    }
+}
+
+.sad_heart{
+    font-size: 80px;
+    color:#e4e4e4;
+    user-select: none;
+}
+.like [type="checkbox"]:checked ~ .sad_heart{
+    animation-name: happy_heart;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sad_heart{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        color: red;
+    }
+}
+
+.enjoy_heart{
+    font-size: 80px;
+    color:#e4e4e4;
+    user-select: none;
+}
+.like [type="checkbox"]:checked ~ .enjoy_heart{
+    animation-name: happy_heart;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes enjoy_heart{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+        color: red;
+    }
+}
+
+
+
 button{
+    display:block;
     height: 20px;
     background-color: #7fffd4;
     border: #8dc3f5;
@@ -110,11 +229,11 @@ h2{
     box-shadow: 3px 3px 3px 3px #555;
 }
 
-#button_happy{
+/* #button_happy{
   display:block;
   width:150px;
   margin:10px auto;
-}
+} */
 
 table{
     margin: 20px 3%;
