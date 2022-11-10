@@ -33,8 +33,6 @@
     </label>
 </div>
 
-    <button id="button_happy">つぶやく</button>
-
     <div class="emotion_type">
       <img src="img/angry.png" width="250" height=auto>
       <textarea id="angry_desc"></textarea>
@@ -46,7 +44,6 @@
         <input type="checkbox">
            <i class="material-icons angry_heart" >favorite</i>
         </label>
-    <button id="button_angry">つぶやく</button>
 
     <div class="emotion_type">
       <img src="img/sad.png" width="250" height=auto>
@@ -59,8 +56,6 @@
         <input type="checkbox">
            <i class="material-icons sad_heart" >favorite</i>
         </label>
-
-    <button id="button_sad">つぶやく</button>
       
     <div class="emotion_type">
       <img src="img/enjoy.png"width="250" height=auto>
@@ -73,8 +68,6 @@
         <input type="checkbox">
            <i class="material-icons enjoy_heart" >favorite</i>
         </label>
-
-    <button id="button_enjoy">つぶやく</button>
       
     <input type="text" id="key">
     <textarea id="memo"></textarea>
@@ -147,78 +140,109 @@ $("#save").on("click",function(){
 
 //4.検索イベント
 
+// for(let i = 0; i<localStorage.length; i++){
+// const key = localStorage.key(i);
+// const reverse = JSON.parse(localStorage.getItem(key)); //オブジェクトへ変換
+// const html = `
+// <tr>
+// <th style="width:100px;">${"こんにちは"}</th>
+// <td style="width:150px;">${"あ"}</td>
+// <td style="width:300px;">${"い"}</td>
+// </tr>
+// `;
+// $("#list").append(html);
+// }
+
+
     $(".happy_heart").on("click", function () {
-        alert("ok");
-        console.log("OK");
-        // localStorage.getItem('Key')でvalueを取得することができる↓
-        let data = JSON.parse(localStorage.getItem("喜"));
-        var text = $("#happy_desc").val();
-        //ハートをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-        if (data.indexOf(text) !== -1) {
-            //     // 文字列が有ったら
-            // alert("含まれているよ");
-            location.replace('index.html');
-            console.log("文字列が有る");
-        } else {
-            //     // 文字列が無かったら
-            console.log("文字列が無い");
-        }
-    });
+            alert("ok");
+            console.log("OK");
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                // localStorage.getItem('Key')でvalueを取得することができる↓
+                let data = JSON.parse(localStorage.getItem(key));
+                console.log(data);
+                var text = $("#happy_desc").val();
+                //ハートをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+                if (data.indexOf(text) !== -1) {
+                    //     // 文字列が有ったら
+                    // alert("含まれているよ");
+                    
+                    console.log("文字列が有る");
+                } else {
+                    //     // 文字列が無かったら
+                    location.replace('happy.html');
+                    console.log("文字列が無い");
+                }
+            }});
 
     $(".angry_heart").on("click", function () {
         alert("ok");
-        console.log("OK");
-        // localStorage.getItem('Key')でvalueを取得することができる↓
-        let data = localStorage.getItem("怒");
-        var text = $("#angry_desc").val();
-        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-        if (data.indexOf(text) !== -1) {
-            //     // 文字列が有ったら
-            alert("含まれているよ");
-            location.replace('index.html');
-            console.log("文字列が有る");
-        } else {
-            //     // 文字列が無かったら
-            console.log("文字列が無い");
-        }
-    });
+            console.log("OK");
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                // localStorage.getItem('Key')でvalueを取得することができる↓
+                let data = JSON.parse(localStorage.getItem(key));
+                console.log(data);
+                var text = $("#angry_desc").val();
+                //ハートをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+                if (data.indexOf(text) !== -1) {
+                    //     // 文字列が有ったら
+                    // alert("含まれているよ");
+                    
+                    console.log("文字列が有る");
+                } else {
+                    //     // 文字列が無かったら
+                    location.replace('angry.html');
+                    console.log("文字列が無い");
+                }
+            }});
 
-    $(".sad_heart").on("click", function () {
+
+            $(".sad_heart").on("click", function () {
         alert("ok");
-        console.log("OK");
-        // localStorage.getItem('Key')でvalueを取得することができる↓
-        let data = localStorage.getItem("哀");
-        var text = $("#sad_desc").val();
-        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-        if (data.indexOf(text) !== -1) {
-            //     // 文字列が有ったら
-            alert("含まれているよ");
-            location.replace('index.html');
-            console.log("文字列が有る");
-        } else {
-            //     // 文字列が無かったら
-            console.log("文字列が無い");
-        }
-    });
+            console.log("OK");
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                // localStorage.getItem('Key')でvalueを取得することができる↓
+                let data = JSON.parse(localStorage.getItem(key));
+                console.log(data);
+                var text = $("#sad_desc").val();
+                //ハートをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+                if (data.indexOf(text) !== -1) {
+                    //     // 文字列が有ったら
+                    // alert("含まれているよ");
+                    
+                    console.log("文字列が有る");
+                } else {
+                    //     // 文字列が無かったら
+                    location.replace('sad.html');
+                    console.log("文字列が無い");
+                }
+            }});
 
     
-    $(".enjoy_heart").on("click", function () {
+            $(".enjoy_heart").on("click", function () {
         alert("ok");
-        console.log("OK");
-        // localStorage.getItem('Key')でvalueを取得することができる↓
-        let data = localStorage.getItem("楽");
-        var text = $("#enjoy_desc").val();
-        //つぶやくボタンをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
-        if (data.indexOf(text) !== -1) {
-            //     // 文字列が有ったら
-            alert("含まれているよ");
-            location.replace('index.html');
-            console.log("文字列が有る");
-        } else {
-            //     // 文字列が無かったら
-            console.log("文字列が無い");
-        }
-    });
+            console.log("OK");
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                // localStorage.getItem('Key')でvalueを取得することができる↓
+                let data = JSON.parse(localStorage.getItem(key));
+                console.log(data);
+                var text = $("#enjoy_desc").val();
+                //ハートをクリックしたら自分がtextareaに入力した文字とvalue値とを比較する
+                if (data.indexOf(text) !== -1) {
+                    //     // 文字列が有ったら
+                    // alert("含まれているよ");
+                    
+                    console.log("文字列が有る");
+                } else {
+                    //     // 文字列が無かったら
+                    location.replace('enjoy.html');
+                    console.log("文字列が無い");
+                }
+            }});
 
 </script>
 <footer><small>G's</small></footer>

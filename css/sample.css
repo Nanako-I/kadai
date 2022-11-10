@@ -46,24 +46,10 @@ textarea{
     width: auto;
     height: 100px;
     text-align: center;
-    /* display: table-cell; */
-  /* vertical-align: middle; */
-    /* justify-content: center;
-    /* align-items: center; */ 
     font-size:60%;
     border-radius: 50%;
     box-shadow: 3px 3px 3px 3px #FFCCCC;
     background-color:#FFFF99;
-
-    /* position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  left: -15px;
-  top: 20px;
-  border-right: 15px solid #fff3ad;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent; */
 }
 
 /* -----------------------------
@@ -107,10 +93,17 @@ textarea{
 }
 
 .angry_heart{
+    margin: 0 35% 0 65%;
     font-size: 80px;
     color:#e4e4e4;
+    /* テキストがクリックされないようにする↓ */
     user-select: none;
 }
+
+.checkbox{
+    margin: 0 35% 0 65%;
+}
+
 .like [type="checkbox"]:checked ~ .angry_heart{
     animation-name: happy_heart;
     animation-duration: .6s;
@@ -131,9 +124,15 @@ textarea{
 }
 
 .sad_heart{
+    margin: 0 35% 0 65%;
     font-size: 80px;
     color:#e4e4e4;
+    /* テキストがクリックされないようにする↓ */
     user-select: none;
+}
+
+.checkbox{
+    margin: 0 35% 0 65%;
 }
 .like [type="checkbox"]:checked ~ .sad_heart{
     animation-name: happy_heart;
@@ -155,9 +154,15 @@ textarea{
 }
 
 .enjoy_heart{
+    margin: 0 35% 0 65%;
     font-size: 80px;
     color:#e4e4e4;
+    /* テキストがクリックされないようにする↓ */
     user-select: none;
+}
+
+.checkbox{
+    margin: 0 35% 0 65%;
 }
 .like [type="checkbox"]:checked ~ .enjoy_heart{
     animation-name: happy_heart;
@@ -179,13 +184,6 @@ textarea{
 }
 
 
-
-button{
-    display:block;
-    height: 20px;
-    background-color: #7fffd4;
-    border: #8dc3f5;
-}
 ul{
     padding: 0;
     border-top: 1px solid #000000;
@@ -229,12 +227,6 @@ h2{
     box-shadow: 3px 3px 3px 3px #555;
 }
 
-/* #button_happy{
-  display:block;
-  width:150px;
-  margin:10px auto;
-} */
-
 table{
     margin: 20px 3%;
     border:1px solid #8dc3f5;
@@ -251,4 +243,39 @@ td{
     font-size:16px;
     background-color:rgb(241, 239, 239);
     border-bottom: 1px solid #8dc3f5;
+}
+/* ----------------------
+happy.html
+----------------------- */
+
+.happy_usagi{
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* ----------------------
+angry.html
+----------------------- */
+
+.nadameru_usagi{
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* ----------------------
+sad.html
+----------------------- */
+
+.hagemasu_neko{
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* ----------------------
+enjoy.html
+----------------------- */
+
+.dance_usagi{
+    text-align: center;
+    margin: 30px auto;
 }
